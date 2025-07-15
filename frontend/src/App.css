@@ -1,0 +1,67 @@
+body {
+  background-color: #fff0f6; /* pastel pink */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(255, 192, 203, 0.3);
+  padding: 2rem;
+}
+
+h1 {
+  color: #d6336c; /* deeper pink */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.vm-card {
+  border-left: 5px solid #f783ac; /* pink */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(255, 182, 193, 0.4);
+}
+
+.vm-card h3 {
+  margin: 0 0 0.25rem 0;
+  color: #a61e4d;
+}
+
+.vm-card p {
+  margin: 0.2rem 0;
+  color: #5a1a3d;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button.toggle {
+  background-color: #f783ac;
+  color: white;
+}
+
+button.toggle:hover {
+  background-color: #d6336c;
+}
+
+button.delete {
+  background-color: #e63946;
+  color: white;
+}
+
+button.delete:hover {
+  background-color: #a61e4d;
+}
