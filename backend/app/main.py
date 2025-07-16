@@ -9,17 +9,23 @@ models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 
+# Corrected origins list (no nesting)
+origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://vm-project-rho.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  
+    allow_origins=origins,  # or ["*"] temporarily to test
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
 # === API Key Config ===
-API_KEY = "key1234567"  
+API_KEY = "key1234567"
 API_KEY_NAME = "X-API-Key"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 

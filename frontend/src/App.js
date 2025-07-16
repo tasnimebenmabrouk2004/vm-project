@@ -3,7 +3,8 @@ import axios from "axios";
 import './App.css';
 
 const API_KEY = "key1234567";
-const BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = 'https://vm-api-oyfm.onrender.com'; 
+
 
 function App() {
   const [vms, setVms] = useState([]);
@@ -14,7 +15,7 @@ function App() {
   const fetchVMs = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${BASE_URL}/vms/`, {
+      const res = await axios.get(`${API_BASE_URL}/vms/`, {
         headers: { "X-API-Key": API_KEY },
       });
       setVms(res.data);
@@ -42,7 +43,7 @@ function App() {
 
     try {
       await axios.post(
-        `${BASE_URL}/vms/`,
+        `${API_BASE_URL}/vms/`,
         {
           name: form.name,
           os: form.os,
@@ -63,7 +64,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${BASE_URL}/vms/${id}`, {
+      await axios.delete(`${API_BASE_URL}/vms/${id}`, {
         headers: { "X-API-Key": API_KEY },
       });
       fetchVMs();
@@ -75,7 +76,7 @@ function App() {
 
   const handleToggle = async (id) => {
     try {
-      await axios.patch(`${BASE_URL}/vms/${id}/toggle_status`, null, {
+      await axios.patch(`${API_BASE_URL}/vms/${id}/toggle_status`, null, {
         headers: { "X-API-Key": API_KEY },
       });
       fetchVMs();
